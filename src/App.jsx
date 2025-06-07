@@ -15,8 +15,26 @@ function App() {
 
   return (
     <>
+      {/* Nav Bar */}
+      <header className="fixed top-0 left-0 w-full bg-gray-950/90 backdrop-blur-md z-50 shadow shadow-blue-900/10">
+        <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between text-white">
+          <h1 className="text-xl font-bold tracking-wide">Victor Valadez</h1>
+          <ul className="hidden md:flex gap-6 text-sm font-medium">
+            <li>
+              <a href="#about" className="hover:text-blue-400 transition">About</a>
+            </li>
+            <li>
+              <a href="#projects" className="hover:text-blue-400 transition">Projects</a>
+            </li>
+            <li>
+              <a href="/resume.pdf" className="hover:text-blue-400 transition">Résumé</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
       {/* Hero Section */}
-      <main className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center text-center p-8">
+      <main className="pt-24 min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center text-center px-8">
         <h1 className="text-5xl font-bold mb-4">Victor Manuel Valadez</h1>
         <p className="text-xl text-gray-300 max-w-xl">
           Software Engineer | Full-Stack Developer | Robotics Enthusiast
