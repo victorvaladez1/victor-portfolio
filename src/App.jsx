@@ -1,9 +1,11 @@
 import './index.css';
 import AOS from 'aos';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -19,18 +21,33 @@ function App() {
       <header className="fixed top-0 left-0 w-full bg-gray-950/90 backdrop-blur-md z-50 shadow shadow-blue-900/10">
         <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between text-white">
           <h1 className="text-xl font-bold tracking-wide">Victor Valadez</h1>
+
+          {/* Desktop Nav */}
           <ul className="hidden md:flex gap-6 text-sm font-medium">
-            <li>
-              <a href="#about" className="hover:text-blue-400 transition">About</a>
-            </li>
-            <li>
-              <a href="#projects" className="hover:text-blue-400 transition">Projects</a>
-            </li>
-            <li>
-              <a href="/resume.pdf" className="hover:text-blue-400 transition">Résumé</a>
-            </li>
+            <li><a href="#about" className="hover:text-blue-400 transition">About</a></li>
+            <li><a href="#projects" className="hover:text-blue-400 transition">Projects</a></li>
+            <li><a href="/resume.pdf" className="hover:text-blue-400 transition">Résumé</a></li>
           </ul>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </nav>
+
+        {/* Mobile Nav Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-gray-950/95 px-6 pb-4 pt-2 text-white space-y-2">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">About</a>
+            <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">Projects</a>
+            <a href="/resume.pdf" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">Résumé</a>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
