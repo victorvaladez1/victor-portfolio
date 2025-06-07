@@ -161,6 +161,40 @@ function App() {
         </div>
       </section>
 
+      {/* Connect Section */}
+      <section id="connect" className="bg-gray-900 text-white py-16 px-8 text-center">
+        <div className="max-w-xl mx-auto" data-aos="fade-up">
+          <h2 className="text-2xl font-bold mb-4">Let's Connect</h2>
+          <p className="text-gray-400 mb-6">
+            I’m always open to new opportunities, collaborations, or just talking tech.
+          </p>
+          <div className="flex justify-center gap-8 text-2xl">
+            <a
+              href="https://github.com/victorvaladez1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <i className="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/victor-valadez-963512282/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="mailto:your.email@example.com"
+              className="hover:text-blue-400 transition"
+            >
+              <i className="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }
