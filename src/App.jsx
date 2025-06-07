@@ -32,7 +32,7 @@ function App() {
           <img
             src="/victor.png"
             alt="Victor Valadez"
-            className="w-40 h-40 rounded-full object-cover border-4 border-blue-600"
+            className="w-40 h-40 rounded-full object-cover border-4 border-blue-600 transition duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105"
           />
           <div>
             <h2 className="text-3xl font-bold mb-4">About Me</h2>
