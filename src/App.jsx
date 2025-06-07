@@ -64,6 +64,44 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="bg-gray-950 text-white py-20 px-8"
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Project Card Example */}
+            <div className="bg-gray-900 rounded-lg shadow-lg p-6 border border-gray-800 hover:shadow-blue-500/30 transition">
+              <h3 className="text-xl font-semibold mb-2">AccountAbility</h3>
+              <p className="text-gray-400 text-sm mb-4">
+                A full-stack finance tracker built with the MERN stack. Lets users track assets, debts, and view visual analytics.
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/yourusername/accountability"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://accountability-demo.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
