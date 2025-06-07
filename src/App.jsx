@@ -1,6 +1,18 @@
 import './index.css';
+import AOS from 'aos';
+import { useEffect } from 'react';
+import 'aos/dist/aos.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -27,12 +39,20 @@ function App() {
       </main>
 
       {/* About Me Section */}
-      <section id="about" className="bg-gray-900 text-white py-20 px-8">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      <section
+        id="about"
+        className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-20 px-8"
+      >
+        <div
+          className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8"
+          data-aos="fade-up"
+        >
           <img
             src="/victor.png"
             alt="Victor Valadez"
             className="w-40 h-40 rounded-full object-cover border-4 border-blue-600 transition duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="100"
           />
           <div>
             <h2 className="text-3xl font-bold mb-4">About Me</h2>
