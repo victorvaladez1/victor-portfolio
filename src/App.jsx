@@ -2,6 +2,7 @@ import './index.css';
 import AOS from 'aos';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
+import GitHubCalendar from 'react-github-calendar';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -161,6 +162,29 @@ function App() {
         </div>
       </section>
 
+      {/* GitHub Contributions Section */}
+            <section id="github" className="bg-gray-950 text-white py-20 px-8">
+        <div className="max-w-5xl mx-auto text-center" data-aos="fade-up">
+          <h2 className="text-2xl font-bold mb-6">GitHub Activity</h2>
+          <div className="bg-[#111827] p-6 rounded-2xl border border-gray-700 shadow-lg shadow-green-500/10 hover:shadow-green-500/30 transition duration-300 max-w-4xl mx-auto">
+            <GitHubCalendar
+              username="victorvaladez1"
+              blockSize={14}
+              blockMargin={4}
+              fontSize={14}
+              colorScheme="dark"
+              theme={{
+                level0: '#1f2937',
+                level1: '#0e4429',
+                level2: '#006d32',
+                level3: '#26a641',
+                level4: '#39d353',
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Connect Section */}
       <section id="connect" className="bg-gray-900 text-white py-16 px-8 text-center">
         <div className="max-w-xl mx-auto" data-aos="fade-up">
@@ -186,7 +210,7 @@ function App() {
               <i className="fab fa-linkedin"></i>
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:mvictorvaladez@gmail.com"
               className="hover:text-blue-400 transition"
             >
               <i className="fas fa-envelope"></i>
