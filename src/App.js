@@ -3,6 +3,7 @@ import AOS from 'aos';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
+import ContactForm from './components/ContactForm.jsx';
 
 import {
   SiJavascript,
@@ -291,6 +292,17 @@ function App() {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section id="contact" className="bg-gray-900 text-white py-16 px-8 text-center">
+        <div className="max-w-xl mx-auto" data-aos="fade-up">
+          <h2 className="text-2xl font-bold mb-4">Send Me a Message</h2>
+          <p className="text-gray-400 mb-6">
+            Reach out directly from here!
+          </p>
+          <ContactForm />
+        </div>
+      </section>
+
       {/* Connect Section */}
       <section id="connect" className="bg-gray-900 text-white py-16 px-8 text-center">
         <div className="max-w-xl mx-auto" data-aos="fade-up">
@@ -308,7 +320,7 @@ function App() {
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/victor-valadez-963512282/"
+              href="https://www.linkedin.com/in/mvictorvaladez"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition"
