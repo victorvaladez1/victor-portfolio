@@ -9,31 +9,26 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    console.log("ENV VARS", {
-        service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-    });
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-    console.log("SERVICE ID", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-    console.log("TEMPLATE ID", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
-    console.log("PUBLIC KEY", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Missing EmailJS environment variables.");
+      setError(true);
+      return;
+    }
 
     emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-        )
+      .sendForm(serviceId, templateId, form.current, publicKey)
       .then(
         () => {
           setSent(true);
           setError(false);
           form.current.reset();
         },
-        (error) => {
-          console.error(error.text);
+        (err) => {
+          console.error('EmailJS error:', err);
           setError(true);
         }
       );
