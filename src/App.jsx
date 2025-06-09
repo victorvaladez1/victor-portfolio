@@ -183,12 +183,14 @@ function App() {
           </div>
         </div>
       </section>
-
+      
       {/* Projects Section */}
       <section id="projects" className="bg-gray-950 text-white py-20 px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {/* AccountAbility Card */}
             <div
               className="bg-[#111827] rounded-2xl border border-gray-700 shadow-lg shadow-blue-500/10 p-6 transition duration-300 hover:shadow-blue-500/30 backdrop-blur-md"
               data-aos="fade-up"
@@ -203,31 +205,43 @@ function App() {
                 <h3 className="text-xl font-semibold">AccountAbility</h3>
               </div>
               <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                A full-stack personal finance tracker that helps users manage bank accounts,
-                investments, transactions, and budgets — all in one clean, intuitive dashboard.
-                Includes secure authentication, real-time portfolio valuation, planning calculators,
-                and an AI financial coach for smarter decisions.
+                Built a full-stack personal finance dashboard to help users manage bank accounts, budgets,
+                and investments with live portfolio tracking and AI-powered insights.
               </p>
-              <div className="flex flex-wrap gap-6 mt-2">
-                <a
-                  href="https://github.com/victorvaladez1/accountability-finance"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
-                  GitHub
-                </a>
-                <a
-                  href="https://accountability-finance.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
-                  Live Demo
-                </a>
+              <ul className="text-gray-400 text-sm list-disc list-inside mb-4 space-y-1">
+                <li>Implemented secure authentication and data management</li>
+                <li>Created modular APIs for transactions and planning tools</li>
+                <li>Integrated live stock data with real-time valuation</li>
+              </ul>
+              <div className="flex flex-col gap-2 mt-2">
+                <div className="flex flex-wrap gap-6">
+                  <a
+                    href="https://github.com/victorvaladez1/accountability-finance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://accountability-finance.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Live Demo
+                  </a>
+                </div>
+                <div className="flex flex-wrap gap-2 text-xs text-gray-400">
+                  <span className="bg-gray-800 px-2 py-1 rounded">React</span>
+                  <span className="bg-gray-800 px-2 py-1 rounded">Node.js</span>
+                  <span className="bg-gray-800 px-2 py-1 rounded">Express</span>
+                  <span className="bg-gray-800 px-2 py-1 rounded">MongoDB</span>
+                </div>
               </div>
             </div>
-            
+
+            {/* JPMC Hackathon Card */}
             <div
               className="bg-[#111827] rounded-2xl border border-gray-700 shadow-lg shadow-blue-500/10 p-6 transition duration-300 hover:shadow-blue-500/30 backdrop-blur-md"
               data-aos="fade-up"
@@ -241,41 +255,38 @@ function App() {
                 />
                 <h3 className="text-xl font-semibold">JPMC Code for Good 2024</h3>
               </div>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                  Developed a full-stack web application for <strong>Abide Women’s Health Services</strong> during JPMorgan Chase’s <em>Code for Good 2024</em> Hackathon. Led backend development in a cross-functional team of five.
-                </p>
-                <ul className="text-gray-400 text-sm list-disc list-inside mb-4 space-y-1">
-                  <li>Built secure RESTful APIs using Flask</li>
-                  <li>Designed SQL schema to support nonprofit operations</li>
-                  <li>Integrated backend with a React frontend</li>
-                  <li>Prioritized scalability and clean architecture</li>
-                </ul>
-              <div className="flex flex-wrap gap-6 mt-2">
-                <a
-                  href="https://github.com/cfgtexas24/Team-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
-                  GitHub
-                </a>
+              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                Developed a full-stack web application for <strong>Abide Women’s Health Services</strong> during JPMorgan Chase’s <em>Code for Good 2024</em> Hackathon. Led backend development in a cross-functional team of five.
+              </p>
+              <ul className="text-gray-400 text-sm list-disc list-inside mb-4 space-y-1">
+                <li>Built secure RESTful APIs using Flask</li>
+                <li>Designed SQL schema to support nonprofit operations</li>
+                <li>Integrated backend with a React frontend</li>
+                <li>Prioritized scalability and clean architecture</li>
+              </ul>
+              <div className="flex flex-col gap-2 mt-2">
+                <div className="flex flex-wrap gap-6">
+                  <a
+                    href="https://github.com/cfgtexas24/Team-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <div className="flex flex-wrap gap-2 text-xs text-gray-400">
+                  <span className="bg-gray-800 px-2 py-1 rounded">React</span>
+                  <span className="bg-gray-800 px-2 py-1 rounded">Flask</span>
+                  <span className="bg-gray-800 px-2 py-1 rounded">PostgreSQL</span>
+                </div>
               </div>
-
-              <div className="flex flex-wrap gap-2 text-xs text-gray-400 mt-3">
-                <span className="bg-gray-800 px-2 py-1 rounded">React</span>
-                <span className="bg-gray-800 px-2 py-1 rounded">Flask</span>
-                <span className="bg-gray-800 px-2 py-1 rounded">PostgreSQL</span>
-              </div>
-
             </div>
-
-
-
 
           </div>
         </div>
-        
       </section>
+
 
       {/* GitHub Contributions Section */}
             <section id="github" className="bg-gray-950 text-white py-20 px-8">
