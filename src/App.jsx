@@ -227,9 +227,54 @@ function App() {
                 </a>
               </div>
             </div>
-          </div>
+            
+            <div
+              className="bg-[#111827] rounded-2xl border border-gray-700 shadow-lg shadow-blue-500/10 p-6 transition duration-300 hover:shadow-blue-500/30 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src="/jpmc-logo.png"
+                  alt="JPMC Hackathon Logo"
+                  className="w-10 h-10 rounded-sm object-contain"
+                />
+                <h3 className="text-xl font-semibold">JPMC Code for Good 2024</h3>
+              </div>
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                  Developed a full-stack web application for <strong>Abide Women’s Health Services</strong> during JPMorgan Chase’s <em>Code for Good 2024</em> Hackathon. Led backend development in a cross-functional team of five.
+                </p>
+                <ul className="text-gray-400 text-sm list-disc list-inside mb-4 space-y-1">
+                  <li>Built secure RESTful APIs using Flask</li>
+                  <li>Designed SQL schema to support nonprofit operations</li>
+                  <li>Integrated backend with a React frontend</li>
+                  <li>Prioritized scalability and clean architecture</li>
+                </ul>
+              <div className="flex flex-wrap gap-6 mt-2">
+                <a
+                  href="https://github.com/cfgtexas24/Team-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  GitHub
+                </a>
+              </div>
 
+              <div className="flex flex-wrap gap-2 text-xs text-gray-400 mt-3">
+                <span className="bg-gray-800 px-2 py-1 rounded">React</span>
+                <span className="bg-gray-800 px-2 py-1 rounded">Flask</span>
+                <span className="bg-gray-800 px-2 py-1 rounded">PostgreSQL</span>
+              </div>
+
+            </div>
+
+
+
+
+          </div>
         </div>
+        
       </section>
 
       {/* GitHub Contributions Section */}
