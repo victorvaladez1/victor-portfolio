@@ -2,7 +2,7 @@ import './index.css';
 import AOS from 'aos';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
-import NowPlaying from "./components/NowPlaying";
+import NowPlaying from "./components/NowPlaying.js";
 import GitHubCalendar from 'react-github-calendar';
 
 import {
