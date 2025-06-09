@@ -3,6 +3,26 @@ import AOS from 'aos';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import GitHubCalendar from 'react-github-calendar';
+import {
+  SiJavascript,
+  SiPython,
+  SiCplusplus,
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiTailwindcss,
+  SiMongodb,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiUnity,
+  SiOpengl,
+} from 'react-icons/si';
+
+import { FaDatabase } from 'react-icons/fa';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,6 +42,13 @@ function App() {
       document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
+
+  const Skill = ({ icon, label }) => (
+    <div className="flex flex-col items-center gap-2 hover:scale-110 transition">
+      {icon}
+      <span>{label}</span>
+    </div>
+  );
 
   return (
     <>
@@ -110,6 +137,49 @@ function App() {
               <br /><br />
               I'm currently looking for software engineering internships where I can work on impactful projects, grow alongside a collaborative team, and continue sharpening my skills in full-stack and systems development.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="bg-gray-900 text-white py-20 px-8">
+        <div className="max-w-6xl mx-auto text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold mb-12">Skills</h2>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-sm max-w-5xl mx-auto">
+            {/* Languages */}
+            <Skill icon={<SiJavascript className="text-yellow-400 text-3xl" />} label="JavaScript" />
+            <Skill icon={<SiPython className="text-blue-400 text-3xl" />} label="Python" />
+            <Skill icon={<SiCplusplus className="text-indigo-400 text-3xl" />} label="C++" />
+            <Skill icon={<SiHtml5 className="text-orange-500 text-3xl" />} label="HTML" />
+            <Skill icon={<SiCss3 className="text-blue-500 text-3xl" />} label="CSS" />
+            <Skill icon={<FaDatabase className="text-yellow-200 text-3xl" />} label="SQL" />
+
+            {/* Frameworks / Libraries */}
+            <Skill icon={<SiReact className="text-cyan-400 text-3xl" />} label="React" />
+            <Skill icon={<SiNodedotjs className="text-green-500 text-3xl" />} label="Node.js" />
+            <Skill icon={<SiExpress className="text-white text-3xl" />} label="Express" />
+            <Skill icon={<SiTailwindcss className="text-sky-400 text-3xl" />} label="Tailwind" />
+            <Skill icon={<SiMongodb className="text-green-400 text-3xl" />} label="MongoDB" />
+
+            {/* Tools */}
+            <Skill icon={<SiFirebase className="text-yellow-500 text-3xl" />} label="Firebase" />
+            <Skill icon={<SiGit className="text-orange-500 text-3xl" />} label="Git" />
+            <Skill icon={<SiGithub className="text-white text-3xl" />} label="GitHub" />
+            <Skill icon={<SiVercel className="text-white text-3xl" />} label="Vercel" />
+            <Skill
+              icon={
+                <img
+                  src="/icons/vscode.png"
+                  alt="VS Code"
+                  className="w-8 h-8"
+                />
+              }
+              label="VS Code"
+            />
+
+            {/* Bonus / Other */}
+            <Skill icon={<SiUnity className="text-white text-3xl" />} label="Unity" />
+            <Skill icon={<SiOpengl className="text-green-300 text-3xl" />} label="OpenGL" />
           </div>
         </div>
       </section>
