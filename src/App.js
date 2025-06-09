@@ -25,8 +25,6 @@ import {
 } from 'react-icons/si';
 
 import { FaDatabase } from 'react-icons/fa';
-import useSWR from 'swr';
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,10 +51,6 @@ function App() {
       <span>{label}</span>
     </div>
   );
-
-  const { data, error } = useSWR('/api/now-playing', fetcher, {
-    refreshInterval: 60000, // 60 seconds
-  });
 
   return (
     <>
