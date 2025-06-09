@@ -3,7 +3,6 @@ import AOS from 'aos';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
-import GitHubCalendar from 'react-github-calendar';
 
 import {
   SiJavascript,
@@ -108,7 +107,8 @@ function App() {
             View Projects
           </a>
           <a
-            href="/resume.pdf"
+            href="/Victor_Manuel_Valadez_Resume.pdf"
+            download="Victor_Manuel_Valadez_Resume.pdf"
             className="px-6 py-2 border border-gray-300 rounded hover:bg-gray-800 transition"
           >
             Download Resume
