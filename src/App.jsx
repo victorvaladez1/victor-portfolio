@@ -61,7 +61,7 @@ function App() {
           <ul className="hidden md:flex gap-6 text-sm font-medium">
             <li><a href="#about" className="hover:text-blue-400 transition">About</a></li>
             <li><a href="#projects" className="hover:text-blue-400 transition">Projects</a></li>
-            <li><a href="/resume.pdf" className="hover:text-blue-400 transition">Résumé</a></li>
+            <li><a href="/resume.pdf" className="hover:text-blue-400 transition">Resume</a></li>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -86,7 +86,7 @@ function App() {
           <div className="md:hidden bg-gray-950/95 px-6 pb-4 pt-2 text-white space-y-2">
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">About</a>
             <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">Projects</a>
-            <a href="/resume.pdf" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">Résumé</a>
+            <a href="/resume.pdf" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">Resume</a>
           </div>
         )}
       </header>
@@ -109,7 +109,7 @@ function App() {
             href="/resume.pdf"
             className="px-6 py-2 border border-gray-300 rounded hover:bg-gray-800 transition"
           >
-            Download Résumé
+            Download Resume
           </a>
         </div>
       </main>
