@@ -294,8 +294,11 @@ function App() {
       </section>
 
       <section id="github" className="bg-gray-950 text-white py-16 px-8 text-center">
-        <GitHubStats />
+        <div data-aos="fade-up">
+          <GitHubStats />
+        </div>
       </section>
+
 
       {/* Contact Form Section */}
       <section id="contact" className="bg-gray-900 text-white py-16 px-8 text-center">
