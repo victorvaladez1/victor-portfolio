@@ -296,6 +296,17 @@ function App() {
       <section id="github" className="bg-gray-950 text-white py-16 px-8 text-center">
         <div data-aos="fade-up">
           <GitHubStats />
+          <div className="mt-8">
+          <a
+            href="https://github.com/victorvaladez1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded transition duration-300"
+          >
+            Explore My GitHub →
+          </a>
+        </div>
+
         </div>
       </section>
 
