@@ -2,6 +2,7 @@ import './index.css';
 import AOS from 'aos';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
+import NowPlaying from "./components/NowPlaying";
 import GitHubCalendar from 'react-github-calendar';
 import {
   SiJavascript,
@@ -139,6 +140,7 @@ function App() {
             </p>
           </div>
         </div>
+        <NowPlaying />
       </section>
 
       {/* Skills Section */}
