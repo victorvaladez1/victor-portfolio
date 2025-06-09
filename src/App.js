@@ -148,6 +148,50 @@ function App() {
         </div>
       </section>
 
+      {/* Skills Section */}
+      <section id="skills" className="bg-gray-900 text-white py-20 px-8">
+        <div className="max-w-6xl mx-auto text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold mb-12">Skills</h2>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-sm max-w-5xl mx-auto">
+
+            {/* Languages */}
+            <Skill icon={<SiJavascript className="text-yellow-400 text-3xl" />} label="JavaScript" />
+            <Skill icon={<SiPython className="text-blue-400 text-3xl" />} label="Python" />
+            <Skill icon={<SiCplusplus className="text-indigo-400 text-3xl" />} label="C++" />
+            <Skill icon={<SiHtml5 className="text-orange-500 text-3xl" />} label="HTML" />
+            <Skill icon={<SiCss3 className="text-blue-500 text-3xl" />} label="CSS" />
+            <Skill icon={<FaDatabase className="text-yellow-200 text-3xl" />} label="SQL" />
+
+            {/* Frameworks / Libraries */}
+            <Skill icon={<SiReact className="text-cyan-400 text-3xl" />} label="React" />
+            <Skill icon={<SiNodedotjs className="text-green-500 text-3xl" />} label="Node.js" />
+            <Skill icon={<SiExpress className="text-white text-3xl" />} label="Express" />
+            <Skill icon={<SiTailwindcss className="text-sky-400 text-3xl" />} label="Tailwind" />
+            <Skill icon={<SiMongodb className="text-green-400 text-3xl" />} label="MongoDB" />
+
+            {/* Tools */}
+            <Skill icon={<SiFirebase className="text-yellow-500 text-3xl" />} label="Firebase" />
+            <Skill icon={<SiGit className="text-orange-500 text-3xl" />} label="Git" />
+            <Skill icon={<SiGithub className="text-white text-3xl" />} label="GitHub" />
+            <Skill icon={<SiVercel className="text-white text-3xl" />} label="Vercel" />
+            <Skill
+              icon={
+                <img
+                  src="/icons/vscode.png"
+                  alt="VS Code"
+                  className="w-8 h-8"
+                />
+              }
+              label="VS Code"
+            />
+
+            {/* Bonus / Other */}
+            <Skill icon={<SiUnity className="text-white text-3xl" />} label="Unity" />
+            <Skill icon={<SiOpengl className="text-green-300 text-3xl" />} label="OpenGL" />
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="bg-gray-950 text-white py-20 px-8">
         <div className="max-w-6xl mx-auto">
@@ -247,29 +291,6 @@ function App() {
         </div>
       </section>
 
-      {/* GitHub Contributions Section */}
-            <section id="github" className="bg-gray-950 text-white py-20 px-8">
-        <div className="max-w-5xl mx-auto text-center" data-aos="fade-up">
-          <h2 className="text-2xl font-bold mb-6">GitHub Activity</h2>
-          <div className="bg-[#111827] p-6 rounded-2xl border border-gray-700 shadow-lg shadow-green-500/10 hover:shadow-green-500/30 transition duration-300 max-w-4xl mx-auto">
-            <GitHubCalendar
-              username="victorvaladez1"
-              blockSize={14}
-              blockMargin={4}
-              fontSize={14}
-              colorScheme="dark"
-              theme={{
-                level0: '#1f2937',
-                level1: '#0e4429',
-                level2: '#006d32',
-                level3: '#26a641',
-                level4: '#39d353',
-              }}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Connect Section */}
       <section id="connect" className="bg-gray-900 text-white py-16 px-8 text-center">
         <div className="max-w-xl mx-auto" data-aos="fade-up">
@@ -303,7 +324,6 @@ function App() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
