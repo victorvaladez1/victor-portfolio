@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
 import ContactForm from './components/ContactForm.jsx';
+import GitHubStats from './components/GitHubStats.jsx';
 
 import {
   SiJavascript,
@@ -290,6 +291,10 @@ function App() {
 
           </div>
         </div>
+      </section>
+
+      <section id="github" className="bg-gray-950 text-white py-16 px-8 text-center">
+        <GitHubStats />
       </section>
 
       {/* Contact Form Section */}
