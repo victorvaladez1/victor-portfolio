@@ -2,7 +2,7 @@ import useSWR from 'swr';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const NowPlaying = () => {
+const NowPlayingComponent = () => {
   const { data, error } = useSWR('/api/now-playing', fetcher, {
     refreshInterval: 60000,
   });
@@ -36,4 +36,4 @@ const NowPlaying = () => {
   );
 };
 
-export default NowPlaying;
+export default NowPlayingComponent;
