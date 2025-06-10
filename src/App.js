@@ -124,39 +124,38 @@ function App() {
       {/* About Me Section */}
       <section
         id="about"
-        className="bg-white text-black dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 dark:text-white py-20 px-8 transition-colors duration-300"
+        className="bg-gray-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 text-black dark:text-white py-20 px-8 transition-colors duration-300"
       >
-        <div
-          className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 bg-white text-black dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 dark:text-white transition-colors duration-300 rounded-lg p-6"
-          data-aos="fade-up"
-        >
-          <img
-            src="/victor.png"
-            alt="Victor Valadez"
-            className="w-40 h-40 rounded-full object-cover border-4 border-blue-600 transition duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          />
-          <div>
-            <h2 className="text-3xl font-bold mb-4">About Me</h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm a Computer Science student at the University of Houston with a strong passion for software engineering, full-stack development, and robotics. I enjoy building clean, efficient systems that solve real-world problems — whether it's through web applications or intelligent automation.
-              <br /><br />
-              I'm currently looking for software engineering internships where I can work on impactful projects, grow alongside a collaborative team, and continue sharpening my skills in full-stack and systems development.
-            </p>
+        <div className="max-w-4xl mx-auto" data-aos="fade-up">
+          <div className="flex flex-col md:flex-row items-center gap-8 p-6 rounded-xl shadow-md bg-white dark:bg-transparent transition-colors duration-300">
+            <img
+              src="/victor.png"
+              alt="Victor Valadez"
+              className="w-40 h-40 rounded-full object-cover border-4 border-blue-600 transition duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            />
+            <div>
+              <h2 className="text-3xl font-bold mb-4">About Me</h2>
+              <p className="leading-relaxed text-gray-700 dark:text-gray-300">
+                I'm a Computer Science student at the University of Houston with a strong passion for software engineering, full-stack development, and robotics. I enjoy building clean, efficient systems that solve real-world problems — whether it's through web applications or intelligent automation.
+                <br /><br />
+                I'm currently looking for software engineering internships where I can work on impactful projects, grow alongside a collaborative team, and continue sharpening my skills in full-stack and systems development.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Now Playing widget */}
-        <div className="mt-10 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          <NowPlayingComponent />
+          {/* Now Playing widget */}
+          <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
+            <NowPlayingComponent />
+          </div>
         </div>
       </section>
 
       {/* Skills Section */}
       <section
         id="skills"
-        className="bg-white text-black dark:bg-gray-900 dark:text-white py-20 px-8 transition-colors duration-300"
+        className="bg-gray-200 text-black dark:bg-gray-900 dark:text-white py-20 px-8 transition-colors duration-300"
       >
         <div className="max-w-6xl mx-auto text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold mb-12">Skills</h2>
@@ -183,13 +182,7 @@ function App() {
             <Skill icon={<SiGithub className="text-white text-3xl" />} label="GitHub" />
             <Skill icon={<SiVercel className="text-white text-3xl" />} label="Vercel" />
             <Skill
-              icon={
-                <img
-                  src="/icons/vscode.png"
-                  alt="VS Code"
-                  className="w-8 h-8"
-                />
-              }
+              icon={<img src="/icons/vscode.png" alt="VS Code" className="w-8 h-8" />}
               label="VS Code"
             />
 
@@ -200,16 +193,16 @@ function App() {
         </div>
       </section>
 
+
       {/* Projects Section */}
       <section
         id="projects"
-        className="bg-white text-black dark:bg-gray-950 dark:text-white py-20 px-8 transition-colors duration-300"
+        className="bg-gray-300 text-black dark:bg-gray-950 dark:text-white py-20 px-8 transition-colors duration-300"
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            {/* Reusable card style */}
+
             {[
               {
                 logo: "/accountability-logo.png",
@@ -308,21 +301,20 @@ function App() {
 
       <section
         id="github"
-        className="bg-white text-black dark:bg-gray-950 dark:text-white py-16 px-8 text-center transition-colors duration-300"
+        className="bg-gray-200 text-black dark:bg-gray-950 dark:text-white py-16 px-8 text-center transition-colors duration-300"
       >
         <div data-aos="fade-up">
           <GitHubStats />
           <div className="mt-8">
-          <a
-            href="https://github.com/victorvaladez1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded transition duration-300"
-          >
-            Explore My GitHub →
-          </a>
-        </div>
-
+            <a
+              href="https://github.com/victorvaladez1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded transition duration-300"
+            >
+              Explore My GitHub →
+            </a>
+          </div>
         </div>
       </section>
 
