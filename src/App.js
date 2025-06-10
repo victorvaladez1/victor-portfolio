@@ -5,7 +5,6 @@ import 'aos/dist/aos.css';
 import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
 import ContactForm from './components/ContactForm.jsx';
 import GitHubStats from './components/GitHubStats.jsx';
-import PhotographySection from './components/PhotographySection.jsx';
 
 import {
   SiJavascript,
@@ -318,8 +317,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      <PhotographySection />
 
       {/* Contact Form Section */}
       <section
