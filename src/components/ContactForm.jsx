@@ -35,37 +35,49 @@ const ContactForm = () => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4 max-w-md mx-auto">
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="flex flex-col gap-4 max-w-md mx-auto transition-colors duration-300"
+    >
       <input
         type="text"
         name="user_name"
         placeholder="Your Name"
         required
-        className="px-4 py-2 rounded bg-gray-800 text-white"
+        className="px-4 py-2 rounded bg-gray-100 text-black dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <input
         type="email"
         name="user_email"
         placeholder="Your Email"
         required
-        className="px-4 py-2 rounded bg-gray-800 text-white"
+        className="px-4 py-2 rounded bg-gray-100 text-black dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <textarea
         name="message"
         placeholder="Your Message"
         required
         rows="4"
-        className="px-4 py-2 rounded bg-gray-800 text-white"
+        className="px-4 py-2 rounded bg-gray-100 text-black dark:bg-gray-800 dark:text-white border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button
         type="submit"
-        className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white font-medium"
+        className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white font-medium transition-colors duration-300"
       >
         Send Message
       </button>
 
-      {sent && <p className="text-green-400">Message sent successfully!</p>}
-      {error && <p className="text-red-400">Something went wrong. Please try again.</p>}
+      {sent && (
+        <p className="text-green-600 dark:text-green-400 text-sm font-medium">
+          Message sent successfully!
+        </p>
+      )}
+      {error && (
+        <p className="text-red-600 dark:text-red-400 text-sm font-medium">
+          Something went wrong. Please try again.
+        </p>
+      )}
     </form>
   );
 };
