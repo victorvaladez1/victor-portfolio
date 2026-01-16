@@ -13,6 +13,9 @@ module.exports = {
           '100%': { transform: 'scaleY(1)' },
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],

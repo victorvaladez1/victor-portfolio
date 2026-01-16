@@ -4,38 +4,48 @@ import { FaSpotify } from 'react-icons/fa';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const NowPlayingComponent = () => {
-  const { data, error } = useSWR('/api/now-playing', fetcher, {
+  const { data } = useSWR('/api/now-playing', fetcher, {
     refreshInterval: 60000,
   });
 
-  if (error || !data) return null;
-
+  if (!data) return null;
+  
   if (!data.isPlaying) {
     return (
-      <div className="flex items-center gap-4 p-4 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400 rounded-lg text-sm border border-gray-300 dark:border-gray-700 transition-colors duration-300">
-        <FaSpotify className="text-green-500 dark:text-green-400 text-lg" />
-        <span className="italic">Not playing anything on Spotify.</span>
+      <div className="flex items-center gap-3 px-4 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur text-sm text-gray-600 dark:text-gray-400">
+        <FaSpotify className="text-green-500" />
+        <span className="italic tracking-wide">Not playing anything</span>
       </div>
     );
   }
 
   return (
-    <div className="flex items-center gap-4 p-4 bg-white text-black dark:bg-gradient-to-r dark:from-gray-800 dark:to-gray-900 dark:text-white rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 transition-colors duration-300">
+    <div className="group flex items-center gap-4 px-4 py-3 rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur shadow-sm hover:shadow-md transition-all duration-300">
+      
+      {/* Album Art */}
       <img
         src={data.albumImageUrl}
         alt={data.title}
-        className="w-14 h-14 rounded ring-2 ring-green-500 ring-offset-2 shadow"
+        className="w-14 h-14 rounded-lg object-cover grayscale group-hover:grayscale-0 transition duration-300"
       />
-      <div className="text-sm flex flex-col">
-        <p className="font-semibold">{data.title}</p>
-        <p className="text-gray-600 dark:text-gray-400">{data.artist}</p>
+
+      {/* Song Info */}
+      <div className="flex flex-col text-sm leading-tight">
+        <span className="font-medium tracking-tight">
+          {data.title}
+        </span>
+        <span className="text-gray-600 dark:text-gray-400 text-xs">
+          {data.artist}
+        </span>
+
         <a
           href={data.songUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-green-600 dark:text-green-400 hover:underline text-xs mt-1 transition-all hover:scale-105"
+          className="mt-1 inline-flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400 hover:text-green-500 transition"
         >
-          Listen on Spotify
+          <FaSpotify className="text-green-500" />
+          Open in Spotify
         </a>
       </div>
     </div>

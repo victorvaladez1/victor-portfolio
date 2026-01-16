@@ -6,6 +6,7 @@ import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
 import ContactForm from './components/ContactForm.jsx';
 import GitHubStats from './components/GitHubStats.jsx';
 
+
 import {
   SiJavascript,
   SiPython,
@@ -17,12 +18,9 @@ import {
   SiExpress,
   SiTailwindcss,
   SiMongodb,
-  SiFirebase,
   SiGit,
   SiGithub,
   SiVercel,
-  SiUnity,
-  SiOpengl,
 } from 'react-icons/si';
 
 import { FaDatabase } from 'react-icons/fa';
@@ -58,15 +56,15 @@ function App() {
 
   return (
     <div className={isDark ? 'dark' : ''}>
-      <div className="bg-white text-black dark:bg-gray-950 dark:text-white transition-colors duration-300">
+      <div className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
         {/* Nav Bar */}
-        <header className="fixed top-0 left-0 w-full bg-white/90 dark:bg-gray-950/90 backdrop-blur-md z-50 shadow shadow-blue-900/10">
+        <header className="fixed top-0 left-0 w-full bg-white/80 dark:bg-black/70 backdrop-blur-md z-50 border-b border-black/10 dark:border-white/10">
           <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between text-black dark:text-white">
             <div className="flex items-center gap-4">
-              <h1 className="text-xl font-bold tracking-wide">Victor Valadez</h1>
+              <h1 className="font-semibold tracking-tight">Victor Valadez</h1>
               <button
                 onClick={toggleTheme}
-                className="px-2 py-1 text-sm border rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition text-black dark:text-white"
+                className="px-3 py-1 text-xs border border-black/20 dark:border-white/20 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
               >
                 {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
               </button>
@@ -74,9 +72,12 @@ function App() {
 
             {/* Desktop Nav */}
             <ul className="hidden md:flex gap-6 text-sm font-medium">
-              <li><a href="#about" className="hover:text-blue-400 transition">About</a></li>
-              <li><a href="#projects" className="hover:text-blue-400 transition">Projects</a></li>
-              <li><a href="/resume.pdf" className="hover:text-blue-400 transition">Resume</a></li>
+              <li><a href="#about" className="hover:underline underline-offset-4 opacity-80 hover:opacity-100 transition"
+>About</a></li>
+              <li><a href="#projects" className="hover:underline underline-offset-4 opacity-80 hover:opacity-100 transition"
+>Projects</a></li>
+              <li><a href="/resume.pdf" className="hover:underline underline-offset-4 opacity-80 hover:opacity-100 transition"
+>Resume</a></li>
             </ul>
 
             {/* Mobile Menu Button */}
@@ -99,23 +100,32 @@ function App() {
           {/* Mobile Nav Menu */}
           {mobileMenuOpen && (
             <div className="md:hidden bg-white dark:bg-gray-950 px-6 pb-4 pt-2 text-black dark:text-white space-y-2">
-              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">About</a>
-              <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">Projects</a>
-              <a href="/resume.pdf" onClick={() => setMobileMenuOpen(false)} className="block hover:text-blue-400">Resume</a>
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block hover:text-white">About</a>
+              <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="block hover:text-white">Projects</a>
+              <a href="/resume.pdf" onClick={() => setMobileMenuOpen(false)} className="block hover:text-white">Resume</a>
             </div>
           )}
         </header>
 
-        <main className="pt-24 min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white flex flex-col items-center justify-center text-center px-8">
-          <h1 className="text-5xl font-bold mb-4">Victor Manuel Valadez</h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-xl">
-            Software Engineer | Full-Stack Developer | Robotics Enthusiast
+        <main className="pt-28 min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-center text-center px-8">
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight mb-4">
+            Victor Manuel Valadez
+          </h1>
+          <p className="text-base md:text-lg leading-relaxed text-black/80 dark:text-white/70">
+            Software Engineer • Robotics Enthusiast • Photographer
           </p>
           <div className="mt-6 flex gap-4">
-            <a href="#projects" className="px-6 py-2 bg-blue-600 rounded hover:bg-blue-700 text-white transition">
+            <a
+              href="#projects"
+              className="px-6 py-2 rounded-full bg-black text-white dark:bg-white dark:text-black hover:opacity-80 transition"
+            >
               View Projects
             </a>
-            <a href="/Victor_Manuel_Valadez_Resume.pdf" download className="px-6 py-2 border border-gray-500 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+            <a
+              href="/Victor_Manuel_Valadez_Resume.pdf"
+              download
+              className="px-6 py-2 rounded-full border border-black/30 dark:border-white/30 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+            >
               Download Resume
             </a>
           </div>
@@ -124,30 +134,50 @@ function App() {
       {/* About Me Section */}
       <section
         id="about"
-        className="bg-gray-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 text-black dark:text-white py-20 px-8 transition-colors duration-300"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-6 transition-colors duration-300 hover:shadow-black/10 dark:hover:shadow-white/10
+"
       >
-        <div className="max-w-4xl mx-auto" data-aos="fade-up">
-          <div className="flex flex-col md:flex-row items-center gap-8 p-6 rounded-xl shadow-md bg-white dark:bg-transparent transition-colors duration-300">
-            <img
-              src="/victor.png"
-              alt="Victor Valadez"
-              className="w-40 h-40 rounded-full object-cover border-4 border-blue-600 transition duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            />
-            <div>
-              <h2 className="text-3xl font-bold mb-4">About Me</h2>
-              <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-                I'm a Computer Science student at the University of Houston with a strong passion for software engineering, full-stack development, and robotics. I enjoy building clean, efficient systems that solve real-world problems — whether it's through web applications or intelligent automation.
-                <br /><br />
-                I'm currently looking for software engineering internships where I can work on impactful projects, grow alongside a collaborative team, and continue sharpening my skills in full-stack and systems development.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-4xl mx-auto" data-aos="fade-up">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 p-6 md:p-8 rounded-2xl bg-white dark:bg-transparent transition-colors duration-300">
 
-          {/* Now Playing widget */}
-          <div className="mt-10" data-aos="fade-up" data-aos-delay="200">
-            <NowPlayingComponent />
+              {/* Profile Image */}
+              <img
+                src="/victor.png"
+                alt="Victor Valadez"
+                className="
+                  w-32 h-32
+                  md:w-36 md:h-36
+                  rounded-full object-cover
+                  border-2 border-black/10 dark:border-white/20
+                  transition
+                  hover:scale-105
+                  hover:shadow-black/10 dark:hover:shadow-white/10
+                  hover:shadow-lg
+                "
+                data-aos="fade-up"
+                data-aos-delay="100"
+              />
+
+              {/* Text */}
+              <div className="text-center md:text-left">
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+                  About Me
+                </h2>
+
+                <p className="text-base leading-relaxed text-black/80 dark:text-white/70 max-w-prose">
+                  I'm a Computer Science student at the University of Houston with a strong passion for
+                  software engineering, full-stack development, and robotics. I enjoy building clean,
+                  efficient systems that solve real-world problems — whether through web applications
+                  or intelligent automation.
+                  <br /><br />
+                  I'm currently looking for software engineering internships where I can work on
+                  impactful projects, grow alongside a collaborative team, and continue sharpening
+                  my skills in full-stack and systems development.
+                </p>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
@@ -155,165 +185,158 @@ function App() {
       {/* Skills Section */}
       <section
         id="skills"
-        className="bg-gray-200 text-black dark:bg-gray-900 dark:text-white py-20 px-8 transition-colors duration-300"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors duration-300"
       >
-        <div className="max-w-6xl mx-auto text-center" data-aos="fade-up">
-          <h2 className="text-3xl font-bold mb-12">Skills</h2>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-sm max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-6xl mx-auto text-center" data-aos="fade-up">
+            <h2 className="text-3xl font-bold tracking-tight mb-12">Skills</h2>
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 text-sm max-w-5xl mx-auto">
 
-            {/* Languages */}
-            <Skill icon={<SiJavascript className="text-yellow-400 text-3xl" />} label="JavaScript" />
-            <Skill icon={<SiPython className="text-blue-400 text-3xl" />} label="Python" />
-            <Skill icon={<SiCplusplus className="text-indigo-400 text-3xl" />} label="C++" />
-            <Skill icon={<SiHtml5 className="text-orange-500 text-3xl" />} label="HTML" />
-            <Skill icon={<SiCss3 className="text-blue-500 text-3xl" />} label="CSS" />
-            <Skill icon={<FaDatabase className="text-yellow-200 text-3xl" />} label="SQL" />
+              {/* Languages */}
+              <Skill icon={<SiJavascript className="text-black/80 dark:text-white/80 text-3xl" />} label="JavaScript" />
+              <Skill icon={<SiPython className="text-black/80 dark:text-white/80 text-3xl" />} label="Python" />
+              <Skill icon={<SiCplusplus className="text-black/80 dark:text-white/80 text-3xl" />} label="C++" />
+              <Skill icon={<SiHtml5 className="text-black/80 dark:text-white/80 text-3xl" />} label="HTML" />
+              <Skill icon={<SiCss3 className="text-black/80 dark:text-white/80 text-3xl" />} label="CSS" />
+              <Skill icon={<FaDatabase className="text-black/80 dark:text-white/80 text-3xl" />} label="SQL" />
 
-            {/* Frameworks / Libraries */}
-            <Skill icon={<SiReact className="text-cyan-400 text-3xl" />} label="React" />
-            <Skill icon={<SiNodedotjs className="text-green-500 text-3xl" />} label="Node.js" />
-            <Skill icon={<SiExpress className="text-white text-3xl" />} label="Express" />
-            <Skill icon={<SiTailwindcss className="text-sky-400 text-3xl" />} label="Tailwind" />
-            <Skill icon={<SiMongodb className="text-green-400 text-3xl" />} label="MongoDB" />
+              {/* Frameworks / Libraries */}
+              <Skill icon={<SiReact className="text-black/80 dark:text-white/80 text-3xl" />} label="React" />
+              <Skill icon={<SiNodedotjs className="text-black/80 dark:text-white/80 text-3xl" />} label="Node.js" />
+              <Skill icon={<SiExpress className="text-black/80 dark:text-white/80 text-3xl" />} label="Express" />
+              <Skill icon={<SiTailwindcss className="text-black/80 dark:text-white/80 text-3xl" />} label="Tailwind" />
+              <Skill icon={<SiMongodb className="text-black/80 dark:text-white/80 text-3xl" />} label="MongoDB" />
 
-            {/* Tools */}
-            <Skill icon={<SiFirebase className="text-yellow-500 text-3xl" />} label="Firebase" />
-            <Skill icon={<SiGit className="text-orange-500 text-3xl" />} label="Git" />
-            <Skill icon={<SiGithub className="text-white text-3xl" />} label="GitHub" />
-            <Skill icon={<SiVercel className="text-white text-3xl" />} label="Vercel" />
-            <Skill
-              icon={<img src="/icons/vscode.png" alt="VS Code" className="w-8 h-8" />}
-              label="VS Code"
-            />
-
-            {/* Bonus / Other */}
-            <Skill icon={<SiUnity className="text-white text-3xl" />} label="Unity" />
-            <Skill icon={<SiOpengl className="text-green-300 text-3xl" />} label="OpenGL" />
+              {/* Tools */}
+              <Skill icon={<SiGit className="text-black/80 dark:text-white/80 text-3xl" />} label="Git" />
+              <Skill icon={<SiGithub className="text-black/80 dark:text-white/80 text-3xl" />} label="GitHub" />
+              <Skill icon={<SiVercel className="text-black/80 dark:text-white/80 text-3xl" />} label="Vercel" />
+            </div>
           </div>
         </div>
       </section>
-
-
+    
       {/* Projects Section */}
       <section
         id="projects"
-        className="bg-gray-300 text-black dark:bg-gray-950 dark:text-white py-20 px-8 transition-colors duration-300"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors duration-300"
       >
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight mb-12 text-center">Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {[
-              {
-                logo: "/accountability-logo.png",
-                title: "AccountAbility",
-                desc: "Full-stack personal finance dashboard with budgeting, stock tracking, and AI-powered insights.",
-                features: [
-                  "Secure login and data handling",
-                  "Transaction and planning APIs",
-                  "Live stock valuation integration"
-                ],
-                links: [
-                  { href: "https://github.com/victorvaladez1/accountability-finance", label: "GitHub" },
-                  { href: "https://accountability-finance.vercel.app", label: "Live Demo" }
-                ],
-                techs: ["React", "Node.js", "Express", "MongoDB"],
-                delay: 100
-              },
-              {
-                logo: "/wellaware-logo.png",
-                title: "WellAware Platform",
-                desc: "Simulated oil well monitoring platform with telemetry, maintenance tracking, and crew management.",
-                features: [
-                  "Real-time telemetry for wells",
-                  "Maintenance logging & crew roster",
-                  "JWT-based admin role authentication"
-                ],
-                links: [
-                  { href: "https://github.com/victorvaladez1/wellaware-platform", label: "GitHub" }
-                ],
-                techs: ["React", "Flask", "PostgreSQL", "SQLAlchemy"],
-                delay: 200,
-                badge: "In Progress"
-              },
-              {
-                logo: "/jpmc-logo.png",
-                title: "JPMC Code for Good 2024",
-                desc: "Built a nonprofit operations app during JPMorgan’s Code for Good hackathon. Led Flask backend with SQL schema.",
-                features: [
-                  "REST APIs for user and nonprofit data",
-                  "SQL schema and secure route handling",
-                  "Connected with a dynamic React frontend"
-                ],
-                links: [
-                  { href: "https://github.com/cfgtexas24/Team-2", label: "GitHub" }
-                ],
-                techs: ["React", "Flask", "PostgreSQL"],
-                delay: 300
-              }
-            ].map((project, idx) => (
-              <div
-                key={idx}
-                className="bg-white text-black dark:bg-[#111827] dark:text-white rounded-2xl border border-gray-300 dark:border-gray-700 shadow-lg shadow-blue-500/10 p-6 transition duration-300 hover:shadow-blue-500/30 backdrop-blur-md flex flex-col justify-between"
-                data-aos="fade-up"
-                data-aos-delay={project.delay}
-              >
-                <div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <img src={project.logo} alt={`${project.title} Logo`} className="w-10 h-10 rounded-sm object-contain" />
-                    <div>
-                      <h3 className="text-xl font-semibold">{project.title}</h3>
-                      {project.badge && (
-                        <span className="text-xs text-yellow-500 font-medium">{project.badge}</span>
-                      )}
+              {[
+                {
+                  logo: "/accountability-logo.png",
+                  title: "AccountAbility",
+                  desc: "Full-stack personal finance dashboard with budgeting, stock tracking, and AI-powered insights.",
+                  features: [
+                    "Secure login and data handling",
+                    "Transaction and planning APIs",
+                    "Live stock valuation integration"
+                  ],
+                  links: [
+                    { href: "https://github.com/victorvaladez1/accountability-finance", label: "GitHub" },
+                    { href: "https://accountability-finance.vercel.app", label: "Live Demo" }
+                  ],
+                  techs: ["React", "Node.js", "Express", "MongoDB"],
+                  delay: 100
+                },
+                {
+                  logo: "/postly-logo.png",
+                  title: "Postly",
+                  desc: "Full-stack blogging platform with authentication and user-owned content.",
+                  features: [
+                    "JWT-based authentication and protected routes",
+                    "Create, edit, delete blogs with ownership enforcement",
+                    "Comment system with relational PostgreSQL data"
+                  ],
+                  links: [
+                    { href: "https://github.com/victorvaladez1/postly", label: "GitHub" },
+                    { href: "https://postly-blogs.vercel.app", label: "Live Demo" }
+                  ],
+                  techs: [
+                    "React",
+                    "Node.js",
+                    "Express",
+                    "PostgreSQL",
+                  ],
+                  delay: 200
+                },
+                {
+                  logo: "/jpmc-logo.png",
+                  title: "JPMC Code for Good 2024",
+                  desc: "Built a nonprofit operations app during JPMorgan’s Code for Good hackathon. Led Flask backend with SQL schema.",
+                  features: [
+                    "REST APIs for user and nonprofit data",
+                    "SQL schema and secure route handling",
+                    "Connected with a dynamic React frontend"
+                  ],
+                  links: [
+                    { href: "https://github.com/cfgtexas24/Team-2", label: "GitHub" }
+                  ],
+                  techs: ["React", "Flask", "PostgreSQL"],
+                  delay: 300
+                }
+              ].map((project, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-6 transition hover:bg-black/5 dark:hover:bg-white/10 flex flex-col justify-between"
+                  data-aos="fade-up"
+                  data-aos-delay={project.delay}
+                >
+                  <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <img src={project.logo} alt={`${project.title} Logo`} className="w-10 h-10 rounded-sm object-contain" />
+                      <div>
+                        <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
+                        {project.badge && (
+                          <span className="text-xs text-yellow-500 font-medium">{project.badge}</span>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-400 text-sm mb-4 leading-relaxed">{project.desc}</p>
+                    <ul className="text-gray-700 dark:text-gray-400 text-sm list-disc list-inside mb-6 space-y-1">
+                      {project.features.map((feat, i) => <li key={i}>{feat}</li>)}
+                    </ul>
+                  </div>
+                  <div className="mt-auto">
+                    <div className="flex flex-wrap gap-6 mb-2">
+                      {project.links.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline underline-offset-4 opacity-80 hover:opacity-100 transition"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-2 text-xs text-gray-600 dark:text-gray-400">
+                      {project.techs.map((tech, i) => (
+                        <span className="border border-black/10 dark:border-white/10 px-2 py-1 rounded-full opacity-80">
+                        {tech}
+                      </span>
+                      ))}
                     </div>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-400 text-sm mb-4 leading-relaxed">{project.desc}</p>
-                  <ul className="text-gray-700 dark:text-gray-400 text-sm list-disc list-inside mb-6 space-y-1">
-                    {project.features.map((feat, i) => <li key={i}>{feat}</li>)}
-                  </ul>
                 </div>
-                <div className="mt-auto">
-                  <div className="flex flex-wrap gap-6 mb-2">
-                    {project.links.map((link, i) => (
-                      <a
-                        key={i}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 hover:underline"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-2 text-xs text-gray-600 dark:text-gray-400">
-                    {project.techs.map((tech, i) => (
-                      <span key={i} className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">{tech}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section
-        id="github"
-        className="bg-gray-200 text-black dark:bg-gray-950 dark:text-white py-16 px-8 text-center transition-colors duration-300"
+        id="about"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
       >
-        <div data-aos="fade-up">
-          <GitHubStats />
-          <div className="mt-8">
-            <a
-              href="https://github.com/victorvaladez1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded transition duration-300"
-            >
-              Explore My GitHub →
-            </a>
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div data-aos="fade-up">
+            <GitHubStats />
           </div>
         </div>
       </section>
@@ -321,54 +344,57 @@ function App() {
       {/* Contact Form Section */}
       <section
         id="contact"
-        className="bg-white text-black dark:bg-gray-900 dark:text-white py-16 px-8 text-center transition-colors duration-300"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
       >
-        <div className="max-w-xl mx-auto" data-aos="fade-up">
-          <h2 className="text-2xl font-bold mb-4">Send Me a Message</h2>
-          <p className="text-gray-700 dark:text-gray-400 mb-6">
-            Reach out directly from here!
-          </p>
-          <ContactForm />
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-xl mx-auto" data-aos="fade-up">
+            <h2 className="text-2xl font-bold tracking-tight marker:mb-4">Send Me a Message</h2>
+            <p className="text-gray-700 dark:text-gray-400 mb-6">
+              Reach out directly from here!
+            </p>
+            <ContactForm />
+          </div>
         </div>
       </section>
 
       {/* Connect Section */}
       <section
-        id="connect"
-        className="bg-white text-black dark:bg-gray-900 dark:text-white py-16 px-8 text-center transition-colors duration-300"
+        id="about"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
       >
-        <div className="max-w-xl mx-auto" data-aos="fade-up">
-          <h2 className="text-2xl font-bold mb-4">Let's Connect</h2>
-          <p className="text-gray-700 dark:text-gray-400 mb-6">
-            I’m always open to new opportunities, collaborations, or just talking tech.
-          </p>
-          <div className="flex justify-center gap-8 text-2xl">
-            <a
-              href="https://github.com/victorvaladez1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition"
-            >
-              <i className="fab fa-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mvictorvaladez"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition"
-            >
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="mailto:mvictorvaladez@gmail.com"
-              className="hover:text-blue-400 transition"
-            >
-              <i className="fas fa-envelope"></i>
-            </a>
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-xl mx-auto" data-aos="fade-up">
+            <h2 className="text-2xl font-bold mb-4 tracking-tight">Let's Connect</h2>
+            <p className="text-gray-700 dark:text-gray-400 mb-6">
+              I’m always open to new opportunities, collaborations, or just talking tech.
+            </p>
+            <div className="flex justify-center gap-8 text-2xl">
+              <a
+                href="https://github.com/victorvaladez1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mvictorvaladez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="mailto:mvictorvaladez@gmail.com"
+                className="hover:text-blue-400 transition"
+              >
+                <i className="fas fa-envelope"></i>
+              </a>
+            </div>
           </div>
         </div>
       </section>
-
       </div>
     </div>
   );
