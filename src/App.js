@@ -175,8 +175,8 @@ function App() {
                   impactful projects, grow alongside a collaborative team, and continue sharpening
                   my skills in full-stack and systems development.
                 </p>
+                <NowPlayingComponent />
               </div>
-              <NowPlayingComponent />
             </div>
           </div>
         </div>
