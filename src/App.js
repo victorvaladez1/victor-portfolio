@@ -176,7 +176,7 @@ function App() {
                   my skills in full-stack and systems development.
                 </p>
               </div>
-
+              <NowPlayingComponent />
             </div>
           </div>
         </div>
