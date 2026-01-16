@@ -165,7 +165,7 @@ function App() {
                   About Me
                 </h2>
 
-                <p className="text-base leading-relaxed text-black/80 dark:text-white/70 max-w-prose">
+                <p className="text-base leading-relaxed text-black/80 dark:text-white/70 max-w-prose mb-2">
                   I'm a Computer Science student at the University of Houston with a strong passion for
                   software engineering, full-stack development, and robotics. I enjoy building clean,
                   efficient systems that solve real-world problems — whether through web applications
