@@ -7,6 +7,7 @@ import ContactForm from './components/ContactForm.jsx';
 import GitHubStats from './components/GitHubStats.jsx';
 import PhotographyGallery from "./components/PhotoGallery.jsx";
 import WakaTimeStats from './components/WakaTimeStats.jsx';
+import LeetCodeStats from './components/LeetCodeStats.jsx';
 
 import {
   SiJavascript,
@@ -353,6 +354,22 @@ function App() {
               Last 7 days of coding activity (personal tracking).
             </p>
             <WakaTimeStats />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="leetcode"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
+      >
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-xl mx-auto" data-aos="fade-up">
+            <h2 className="text-2xl font-bold tracking-tight mb-2">LeetCode</h2>
+            <p className="text-gray-700 dark:text-gray-400 mb-6">
+              Problem-solving progress (pulled from my profile).
+            </p>
+
+            <LeetCodeStats username="YOUR_LEETCODE_USERNAME" />
           </div>
         </div>
       </section>
