@@ -175,8 +175,9 @@ export default function GitHubStats() {
               </div>
             )}
           </div>
-          
-          {/* Contributions */}
+        </div>
+
+        {/* Contributions */}
           <div className="mt-4 rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
             <div className="flex items-center justify-between gap-3">
               <p className="text-sm font-medium opacity-80">Contributions</p>
@@ -203,7 +204,6 @@ export default function GitHubStats() {
               Tip: scroll horizontally on mobile.
             </p>
           </div>
-        </div>
 
         {/* Divider */}
         <div className="my-6 h-px w-full bg-black/10 dark:bg-white/10" />
