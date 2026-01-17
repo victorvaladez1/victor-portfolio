@@ -23,6 +23,21 @@ export default function PhotographyGallery() {
         { src: "/photos/photography/porsche-911-silver.jpg", alt: "Silver Porsche 911" },
         { src: "/photos/photography/porsche-911-white.jpg", alt: "White Porsche 911" },
         { src: "/photos/photography/vw-beetle.jpg", alt: "Volkswagen Beetle" },
+
+        { src: "/photos/photography/sf-street.jpg", alt: "San Francisco Street" },
+        { src: "/photos/photography/air-jordan-6.jpg", alt: "Air Jordan 6" },
+        { src: "/photos/photography/bobcat.jpg", alt: "Bobcat" },
+        { src: "/photos/photography/frog.jpg", alt: "Frog" },
+
+        { src: "/photos/photography/bmw-street.jpg", alt: "BMW Street" },
+        { src: "/photos/photography/bmw-e30.jpg", alt: "BMW E30" },
+        { src: "/photos/photography/snake.jpg", alt: "Snake" },
+        { src: "/photos/photography/sea-lions.jpg", alt: "Sea Lions" },
+
+        { src: "/photos/photography/golden-gate.jpg", alt: "Golden Gate Bridge" },
+        { src: "/photos/photography/porsche-911-silver.jpg", alt: "Silver Porsche 911" },
+        { src: "/photos/photography/porsche-911-white.jpg", alt: "White Porsche 911" },
+        { src: "/photos/photography/vw-beetle.jpg", alt: "Volkswagen Beetle" },
     ],
     []
   );

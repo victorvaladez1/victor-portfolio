@@ -2,9 +2,15 @@ import { useEffect, useMemo, useState } from "react";
 
 const USERNAME = "victorvaladez1";
 
-const GitHubStats = () => {
+function clampIndex(i, len) {
+  if (len <= 0) return 0;
+  return (i + len) % len;
+}
+
+export default function GitHubStats() {
   const [profile, setProfile] = useState(null);
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState([]); // recently updated (top)
+  const [allRepos, setAllRepos] = useState([]); // all repos for stats
   const [status, setStatus] = useState("loading"); // loading | success | error
 
   const profileUrl = useMemo(
@@ -24,7 +30,10 @@ const GitHubStats = () => {
       try {
         setStatus("loading");
 
-        const [pRes, rRes] = await Promise.all([fetch(profileUrl), fetch(reposUrl)]);
+        const [pRes, rRes] = await Promise.all([
+          fetch(profileUrl),
+          fetch(reposUrl),
+        ]);
 
         if (!pRes.ok) throw new Error("Failed to load GitHub profile");
         if (!rRes.ok) throw new Error("Failed to load GitHub repos");
@@ -34,12 +43,13 @@ const GitHubStats = () => {
 
         if (cancelled) return;
 
-        // Take top 3 recently-updated repos that aren't forks
-        const top = Array.isArray(r)
-          ? r.filter((repo) => !repo.fork).slice(0, 3)
-          : [];
+        const arr = Array.isArray(r) ? r : [];
+
+        // Recently updated repos (top 3, not forks)
+        const top = arr.filter((repo) => !repo.fork).slice(0, 3);
 
         setProfile(p);
+        setAllRepos(arr);
         setRepos(top);
         setStatus("success");
       } catch (e) {
@@ -55,6 +65,8 @@ const GitHubStats = () => {
     };
   }, [profileUrl, reposUrl]);
 
+  const stats = useMemo(() => buildRepoStats(allRepos), [allRepos]);
+
   if (status === "loading") {
     return (
       <div className="max-w-3xl mx-auto text-center">
@@ -69,9 +81,7 @@ const GitHubStats = () => {
     return (
       <div className="max-w-3xl mx-auto text-center">
         <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur p-6">
-          <p className="text-sm opacity-70">
-            Couldn’t load GitHub data right now.
-          </p>
+          <p className="text-sm opacity-70">Couldn’t load GitHub data right now.</p>
           <div className="pt-4">
             <a
               href={`https://github.com/${USERNAME}`}
@@ -132,11 +142,42 @@ const GitHubStats = () => {
               </p>
             )}
 
+            {/* Primary stats */}
             <div className="mt-4 grid grid-cols-3 gap-3">
               <Stat label="Followers" value={profile.followers} />
               <Stat label="Repos" value={profile.public_repos} />
               <Stat label="Following" value={profile.following} />
             </div>
+
+            {/* NEW: repo-derived stats */}
+            <div className="mt-3 grid grid-cols-3 gap-3">
+              <Stat label="Stars" value={stats.totalStars} />
+              <Stat label="Forks" value={stats.totalForks} />
+              <Stat label="Top Language" value={stats.topLanguage || "—"} />
+            </div>
+
+            {/* NEW: highlight most-starred repo */}
+            {stats.mostStarred && (
+              <div className="mt-4 rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+                <p className="text-xs opacity-70">Most starred repo</p>
+                <a
+                  href={stats.mostStarred.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-flex items-center gap-2 font-semibold text-sm hover:underline underline-offset-4"
+                >
+                  {stats.mostStarred.name}
+                  <span className="text-xs opacity-70">
+                    ★ {stats.mostStarred.stargazers_count}
+                  </span>
+                </a>
+                {stats.mostStarred.description && (
+                  <p className="text-xs opacity-70 mt-1">
+                    {stats.mostStarred.description}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -145,9 +186,7 @@ const GitHubStats = () => {
 
         {/* Recent repos */}
         <div>
-          <p className="text-sm font-medium opacity-80 mb-3">
-            Recently updated
-          </p>
+          <p className="text-sm font-medium opacity-80 mb-3">Recently updated</p>
 
           <div className="grid gap-3">
             {repos.map((repo) => (
@@ -171,17 +210,21 @@ const GitHubStats = () => {
                   </div>
 
                   {repo.language && (
-                    <span className="shrink-0 text-xs rounded-full px-2.5 py-1
-                                     border border-black/10 dark:border-white/10
-                                     opacity-80">
+                    <span
+                      className="shrink-0 text-xs rounded-full px-2.5 py-1
+                                 border border-black/10 dark:border-white/10
+                                 opacity-80"
+                    >
                       {repo.language}
                     </span>
                   )}
                 </div>
 
-                <p className="text-xs opacity-60 mt-2">
-                  Updated {formatRelative(repo.updated_at)}
-                </p>
+                <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs opacity-60">
+                  <span>Updated {formatRelative(repo.updated_at)}</span>
+                  <span>★ {repo.stargazers_count}</span>
+                  <span>⑂ {repo.forks_count}</span>
+                </div>
               </a>
             ))}
           </div>
@@ -189,7 +232,7 @@ const GitHubStats = () => {
       </div>
     </div>
   );
-};
+}
 
 const Stat = ({ label, value }) => (
   <div className="rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-3 text-center">
@@ -197,6 +240,46 @@ const Stat = ({ label, value }) => (
     <p className="text-xs opacity-70 mt-0.5">{label}</p>
   </div>
 );
+
+function buildRepoStats(repos) {
+  const arr = Array.isArray(repos) ? repos : [];
+  const nonForks = arr.filter((r) => !r.fork);
+
+  let totalStars = 0;
+  let totalForks = 0;
+
+  const langCount = new Map();
+  let mostStarred = null;
+
+  for (const r of nonForks) {
+    totalStars += r.stargazers_count || 0;
+    totalForks += r.forks_count || 0;
+
+    if (r.language) {
+      langCount.set(r.language, (langCount.get(r.language) || 0) + 1);
+    }
+
+    if (!mostStarred || (r.stargazers_count || 0) > (mostStarred.stargazers_count || 0)) {
+      mostStarred = r;
+    }
+  }
+
+  let topLanguage = null;
+  let best = 0;
+  for (const [lang, count] of langCount.entries()) {
+    if (count > best) {
+      best = count;
+      topLanguage = lang;
+    }
+  }
+
+  return {
+    totalStars,
+    totalForks,
+    topLanguage,
+    mostStarred: mostStarred && (mostStarred.stargazers_count || 0) > 0 ? mostStarred : null,
+  };
+}
 
 function formatRelative(iso) {
   try {
@@ -216,5 +299,3 @@ function formatRelative(iso) {
     return "recently";
   }
 }
-
-export default GitHubStats;
