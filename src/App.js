@@ -331,7 +331,7 @@ function App() {
       </section>
 
       <section
-        id="about"
+        id="github"
         className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
       >
         <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
@@ -371,7 +371,7 @@ function App() {
 
       {/* Connect Section */}
       <section
-        id="about"
+        id="connect"
         className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
       >
         <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
