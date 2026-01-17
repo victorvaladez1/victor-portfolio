@@ -1,11 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 const USERNAME = "victorvaladez1";
-
-function clampIndex(i, len) {
-  if (len <= 0) return 0;
-  return (i + len) % len;
-}
+// const chartUrl = `https://ghchart.rshah.org/${USERNAME}`;
 
 export default function GitHubStats() {
   const [profile, setProfile] = useState(null);
@@ -179,6 +175,34 @@ export default function GitHubStats() {
               </div>
             )}
           </div>
+        </div>
+
+        {/* Contributions */}
+        <div className="mt-4 rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-sm font-medium opacity-80">Contributions</p>
+            <a
+              href={`https://github.com/${USERNAME}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs opacity-70 hover:opacity-100 hover:underline underline-offset-4"
+            >
+              View on GitHub →
+            </a>
+          </div>
+
+          <div className="mt-3 overflow-x-auto">
+            <img
+              src={`https://ghchart.rshah.org/${USERNAME}`}
+              alt={`${USERNAME} GitHub contributions chart`}
+              loading="lazy"
+              className="h-[120px] w-auto"
+            />
+          </div>
+
+          <p className="mt-2 text-xs opacity-60">
+            Tip: scroll horizontally on mobile.
+          </p>
         </div>
 
         {/* Divider */}
