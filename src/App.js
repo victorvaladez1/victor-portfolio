@@ -369,7 +369,7 @@ function App() {
               Problem-solving progress (pulled from my profile).
             </p>
 
-            <LeetCodeStats username="YOUR_LEETCODE_USERNAME" />
+            <LeetCodeStats username="VSquared8790" />
           </div>
         </div>
       </section>
