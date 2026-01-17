@@ -6,6 +6,7 @@ import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
 import ContactForm from './components/ContactForm.jsx';
 import GitHubStats from './components/GitHubStats.jsx';
 import PhotographyGallery from "./components/PhotoGallery.jsx";
+import WakaTimeStats from './components/WakaTimeStats.jsx';
 
 import {
   SiJavascript,
@@ -335,8 +336,23 @@ function App() {
         className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
       >
         <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
-          <div data-aos="fade-up">
+          <div data-aos="fade-up" className="space-y-6">
             <GitHubStats />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="wakatime"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
+      >
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-xl mx-auto" data-aos="fade-up">
+            <h2 className="text-2xl font-bold tracking-tight mb-2">WakaTime</h2>
+            <p className="text-gray-700 dark:text-gray-400 mb-6">
+              Last 7 days of coding activity (personal tracking).
+            </p>
+            <WakaTimeStats />
           </div>
         </div>
       </section>
