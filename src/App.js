@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
 import ContactForm from './components/ContactForm.jsx';
 import GitHubStats from './components/GitHubStats.jsx';
-
+import PhotographyGallery from "./components/PhotoGallery.jsx";
 
 import {
   SiJavascript,
@@ -337,6 +337,18 @@ function App() {
         <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
           <div data-aos="fade-up">
             <GitHubStats />
+          </div>
+        </div>
+      </section>
+
+      {/* Photography Section */}
+      <section
+        id="photography"
+        className="bg-white dark:bg-black text-black dark:text-white py-24 px-8 transition-colors text-center duration-300"
+      >
+        <div className="max-w-6xl mx-auto border-t border-black/10 dark:border-white/10 pt-16">
+          <div className="max-w-xl mx-auto" data-aos="fade-up">
+            <PhotographyGallery/>
           </div>
         </div>
       </section>
