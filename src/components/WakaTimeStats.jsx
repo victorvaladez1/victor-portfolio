@@ -129,7 +129,7 @@ export default function WakaTimeStats() {
                   tick={{ fontSize: 12 }}
                 />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="seconds" radius={[8, 8, 8, 8]}>
+                <Bar dataKey="seconds" fill="#d1d5db" radius={[8, 8, 8, 8]}>
                   {summary.topLangs.map((_, idx) => (
                     <Cell key={`cell-${idx}`} />
                   ))}
