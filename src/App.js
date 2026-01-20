@@ -246,6 +246,22 @@ function App() {
                   delay: 100
                 },
                 {
+                  logo: "/live-lobby-logo.png",
+                  title: "Live Lobby",
+                  desc: "Real-time global chat app with JWT auth, Websockets, and PostgreSQL persistance. Built to learn end-to-end fullstack + real-time systems.",
+                  features: [
+                    "JWT auth + protected REST endpoints",
+                    "WebSocket auth + Live message broadcast",
+                    "PostgreSQL message history (latest N messages on load)"
+                  ],
+                  links: [
+                    { href: "https://github.com/victorvaladez1/live-lobby", label: "GitHub"},
+                    { href: "https://live-lobby.vercel.app", label: "Live Demo"}
+                  ],
+                  techs: ["React", "Node.js", "Express", "PostgreSQL", "WebSockets"],
+                  delay: 250
+                },
+                {
                   logo: "/postly-logo.png",
                   title: "Postly",
                   desc: "Full-stack blogging platform with authentication and user-owned content.",
@@ -319,9 +335,12 @@ function App() {
                     </div>
                     <div className="flex flex-wrap gap-2 text-xs text-gray-600 dark:text-gray-400">
                       {project.techs.map((tech, i) => (
-                        <span className="border border-black/10 dark:border-white/10 px-2 py-1 rounded-full opacity-80">
-                        {tech}
-                      </span>
+                        <span
+                          key={`${project.title}-tech-${i}`}
+                          className="border border-black/10 dark:border-white/10 px-2 py-1 rounded-full opacity-80"
+                        >
+                          {tech}
+                        </span>
                       ))}
                     </div>
                   </div>
