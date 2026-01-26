@@ -2,7 +2,7 @@ import './index.css';
 import AOS from 'aos';
 import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
-import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
+// import NowPlayingComponent from "./components/NowPlayingComponent.jsx";
 import ContactForm from './components/ContactForm.jsx';
 import GitHubStats from './components/GitHubStats.jsx';
 import PhotographyGallery from "./components/PhotoGallery.jsx";
@@ -177,7 +177,7 @@ function App() {
                   impactful projects, grow alongside a collaborative team, and continue sharpening
                   my skills in full-stack and systems development.
                 </p>
-                <NowPlayingComponent />
+                {/* <NowPlayingComponent /> */}
               </div>
             </div>
           </div>
